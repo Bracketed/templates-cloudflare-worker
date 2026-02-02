@@ -235,22 +235,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/vite-plugin@npm:1.22.1":
-  version: 1.22.1
-  resolution: "@cloudflare/vite-plugin@npm:1.22.1"
-  dependencies:
-    "@cloudflare/unenv-preset": "npm:2.12.0"
-    miniflare: "npm:4.20260128.0"
-    unenv: "npm:2.0.0-rc.24"
-    wrangler: "npm:4.61.1"
-    ws: "npm:8.18.0"
-  peerDependencies:
-    vite: ^6.1.0 || ^7.0.0
-    wrangler: ^4.61.1
-  checksum: 10c0/065b85a5aa5103937357fe84f436e1b6127c10d8b7b52af915d23bc25a1788df1a5695fcfc3b672d82a8d256351a4bedd2a7d71c33bcf2794d606760e12681c8
-  languageName: node
-  linkType: hard
-
 "@cloudflare/workerd-darwin-64@npm:1.20260128.0":
   version: 1.20260128.0
   resolution: "@cloudflare/workerd-darwin-64@npm:1.20260128.0"
@@ -687,6 +671,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hono/vite-build@npm:^1.9.2":
+  version: 1.9.2
+  resolution: "@hono/vite-build@npm:1.9.2"
+  peerDependencies:
+    hono: "*"
+  checksum: 10c0/6449664d155ec900036775b22c033d97a774cc42fbee4bfe7947fecca4f3563b1cd245c17eb74c710ec65dab10392f7935158e5e85f1b849ba86a3415bd322a5
+  languageName: node
+  linkType: hard
+
 "@hono/vite-dev-server@npm:^0.23.0":
   version: 0.23.0
   resolution: "@hono/vite-dev-server@npm:0.23.0"
@@ -705,6 +698,27 @@ __metadata:
     wrangler:
       optional: true
   checksum: 10c0/85666c1a1ca630b659e7594c029eb99311e632a255084575693101bc9debf764da79c6ae4f74c149a02d4a4c3c5cc894b95c508d419a3fe703e8d6dd20f3ff75
+  languageName: node
+  linkType: hard
+
+"@hono/vite-dev-server@npm:^0.24.1":
+  version: 0.24.1
+  resolution: "@hono/vite-dev-server@npm:0.24.1"
+  dependencies:
+    "@hono/node-server": "npm:^1.14.2"
+    minimatch: "npm:^9.0.3"
+  peerDependencies:
+    hono: "*"
+    miniflare: "*"
+    wrangler: "*"
+  peerDependenciesMeta:
+    hono:
+      optional: false
+    miniflare:
+      optional: true
+    wrangler:
+      optional: true
+  checksum: 10c0/b670e72d539cc09e86dc59dbec3713cdc0e97496941716b415963d10b201faf8cb7fe7a76df7d67207df0549c022dd24792daf5d544cf3f5b648f0fb678a1651
   languageName: node
   linkType: hard
 
@@ -3066,7 +3080,8 @@ __metadata:
   resolution: "worker-template@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^2.3.13"
-    "@cloudflare/vite-plugin": "npm:1.22.1"
+    "@hono/vite-build": "npm:^1.9.2"
+    "@hono/vite-dev-server": "npm:^0.24.1"
     "@swc/core": "npm:^1.15.11"
     "@types/node": "npm:^25.2.0"
     "@types/react": "npm:^19"
@@ -3108,7 +3123,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrangler@npm:4.61.1, wrangler@npm:^4.61.1":
+"wrangler@npm:^4.61.1":
   version: 4.61.1
   resolution: "wrangler@npm:4.61.1"
   dependencies:

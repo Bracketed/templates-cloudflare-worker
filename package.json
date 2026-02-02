@@ -10,6 +10,8 @@
 		"publish": true
 	},
 	"dependencies": {
+		"@hono/vite-build": "^1.9.2",
+		"@hono/vite-dev-server": "^0.24.1",
 		"@vitejs/plugin-react-swc": "^4.2.3",
 		"hono": "4.11.7",
 		"honox": "^0.1.53",
@@ -18,7 +20,6 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.13",
-		"@cloudflare/vite-plugin": "1.22.1",
 		"@swc/core": "^1.15.11",
 		"@types/node": "^25.2.0",
 		"@types/react": "^19",

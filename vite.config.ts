@@ -1,11 +1,24 @@
-import { cloudflare } from '@cloudflare/vite-plugin';
+import build from '@hono/vite-build/cloudflare-workers';
+import adapter from '@hono/vite-dev-server/cloudflare';
 import react from '@vitejs/plugin-react-swc';
 import honox from 'honox/vite';
 import url from 'node:url';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [cloudflare(), honox(), react()],
+	define: {
+		'process.env': 'process.env',
+	},
+	plugins: [
+		honox({
+			devServer: {
+				adapter,
+			},
+			client: { input: ['/src/index.ts'] },
+		}),
+		build(),
+		react(),
+	],
 	resolve: {
 		alias: [
 			{
