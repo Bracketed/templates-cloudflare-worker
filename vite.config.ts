@@ -14,7 +14,6 @@ export default defineConfig({
 			devServer: {
 				adapter,
 			},
-			client: { input: ['/src/index.ts'] },
 		}),
 		build(),
 		react(),

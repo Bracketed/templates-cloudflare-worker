@@ -36,9 +36,7 @@
 		"check": "tsc && vite build && wrangler deploy --dry-run",
 		"clean": "rimraf .wrangler dist",
 		"deploy": "wrangler deploy",
-		"dev": "vite",
-		"lint": "eslint .",
-		"preview": "npm run build && vite preview"
+		"dev": "vite"
 	},
 	"type": "module",
 	"packageManager": "yarn@4.12.0"
