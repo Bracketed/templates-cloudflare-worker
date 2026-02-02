@@ -82,6 +82,27 @@ Monitor your workers:
 npx wrangler tail
 ```
 
+## Troubleshooting
+
+### Wrangler deploy configuration error
+
+If you encounter an error like:
+
+```
+X [ERROR] There is a deploy configuration at ".wrangler\deploy\config.json".
+But the redirected configuration path it points to, "dist\...\wrangler.json", does not exist.
+```
+
+This occurs when Wrangler has cached an outdated deploy configuration. To fix this, run:
+
+```bash
+npm run clean
+```
+
+Or manually delete the `.wrangler/` directory.
+
+Then retry your build or deploy.
+
 ## Additional Resources
 
 - [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
