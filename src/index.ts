@@ -1,10 +1,10 @@
 import { Hono } from 'hono';
-import { trimTrailingSlash } from 'hono/trailing-slash';
+import { showRoutes } from 'hono/dev';
+import { createApp } from 'honox/server';
 
-import '@routes/routes';
+const base = new Hono<{ Bindings: Env }>({ strict: true });
+const app = createApp<{ Bindings: Env }>({ trailingSlash: false, app: base });
 
-const app = new Hono<{ Bindings: Env }>({ strict: true });
-
-app.use(trimTrailingSlash());
+showRoutes(app);
 
 export default app;

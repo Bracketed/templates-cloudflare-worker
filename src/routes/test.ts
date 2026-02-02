@@ -1,8 +1,5 @@
-import { Hono } from 'hono';
-import { trimTrailingSlash } from 'hono/trailing-slash';
+import { createRoute } from 'honox/factory';
 
-const app = new Hono<{ Bindings: Env }>({ strict: true });
-
-app.use(trimTrailingSlash());
-
-app.get('/', (c) => c.json({ name: 'Cloudflare' }));
+export const GET = createRoute(async (c) => {
+	return c.json({ name: 'Cloudflare' });
+});
